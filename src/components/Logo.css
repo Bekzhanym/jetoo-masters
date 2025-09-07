@@ -1,0 +1,67 @@
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+}
+
+.logo-image {
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* Размеры */
+.logo-container.small .logo-image {
+  height: 30px;
+}
+
+.logo-container.medium .logo-image {
+  height: 40px;
+}
+
+.logo-container.large .logo-image {
+  height: 50px;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+  .logo-container {
+    top: 15px;
+    left: 15px;
+  }
+  
+  .logo-container.large .logo-image {
+    height: 45px;
+  }
+  
+  .logo-container.medium .logo-image {
+    height: 35px;
+  }
+  
+  .logo-container.small .logo-image {
+    height: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-container {
+    top: 10px;
+    left: 10px;
+  }
+  
+  .logo-container.large .logo-image {
+    height: 40px;
+  }
+  
+  .logo-container.medium .logo-image {
+    height: 30px;
+  }
+  
+  .logo-container.small .logo-image {
+    height: 22px;
+  }
+} 

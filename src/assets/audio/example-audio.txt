@@ -1,0 +1,16 @@
+# Пример аудио файла
+
+Этот файл показывает, как должны быть названы аудио файлы.
+
+Замените этот файл на реальные аудио файлы:
+
+- question-1.mp3
+- question-2.mp3  
+- question-3.mp3
+- dialogue-office-tour.mp3
+- dialogue-reschedule-meeting.mp3
+- dialogue-meeting-notification.mp3
+
+И так далее...
+
+Файлы должны быть в формате MP3, WAV, OGG или M4A.

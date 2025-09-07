@@ -1,0 +1,227 @@
+.welcome-screen {
+  min-height: 100vh;
+  width: 100vw;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.welcome-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #5257de;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-overlay p {
+  color: #5257de;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.welcome-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.welcome-image.loaded {
+  opacity: 1;
+}
+
+/* Анимированная кнопка */
+.animated-button-container {
+  position: absolute;
+  bottom: 65%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.animated-button {
+  position: relative;
+  background: 
+    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+    linear-gradient(135deg, #255AE2, #1e4bd1);
+  border: none;
+  border-radius: 10px;
+  width: 246px;
+  height: 60px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 8px 25px rgba(37, 90, 226, 0.3);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.animated-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(37, 90, 226, 0.4);
+  background: 
+    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.4) 0%, transparent 50%),
+    linear-gradient(135deg, #2d6af0, #255AE2);
+}
+
+.animated-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(37, 90, 226, 0.3);
+}
+
+.button-text {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.button-arrow {
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+/* Пульсирующие кольца */
+.pulse-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(37, 90, 226, 0.3);
+  border-radius: 50px;
+  animation: pulse 2s infinite;
+  pointer-events: none;
+}
+
+.pulse-ring-2 {
+  animation-delay: 0.5s;
+  opacity: 0.6;
+}
+
+.pulse-ring-3 {
+  animation-delay: 1s;
+  opacity: 0.4;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+}
+
+
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+  .animated-button {
+    width: 200px;
+    height: 48px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+  }
+  
+  .button-text {
+    font-size: 1.2rem;
+  }
+  
+  .button-arrow {
+    font-size: 0.8rem;
+  }
+  
+  .animated-button-container {
+    bottom: 60%;
+  }
+  
+  .loading-spinner {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .loading-overlay p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .animated-button {
+    width: 180px;
+    height: 44px;
+    border-radius: 7px;
+    font-size: 1rem;
+  }
+  
+  .button-text {
+    font-size: 1.1rem;
+  }
+  
+  .button-arrow {
+    font-size: 0.7rem;
+  }
+  
+  .animated-button-container {
+    bottom: 55%;
+  }
+  
+  .loading-spinner {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .loading-overlay p {
+    font-size: 0.9rem;
+  }
+} 

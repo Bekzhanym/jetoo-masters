@@ -1,0 +1,19 @@
+# Пример изображения для вопроса
+
+Этот файл показывает, как должны быть названы изображения для вопросов.
+
+Замените этот файл на реальные изображения:
+
+- question-1.jpg
+- question-2.jpg
+- question-3.jpg
+- question-11.jpg (план дома)
+- question-14.jpg (фигура)
+- question-19.jpg (аққулар)
+- question-21.jpg (аққулар)
+- question-49.jpg (fairies)
+- question-50.jpg (fairies)
+
+И так далее...
+
+Файлы должны быть в формате JPG, PNG, SVG или WEBP.
