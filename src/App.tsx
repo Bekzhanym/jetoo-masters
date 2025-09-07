@@ -2,12 +2,11 @@ import { useState } from 'react';
 import WelcomeScreen from './components/WelcomeScreen';
 import QuizScreen from './components/QuizScreen';
 import ResultScreen from './components/ResultScreen';
-import VideoScreen from './components/VideoScreen';
 import type { UserInfo } from './data/questions';
 import { getLevel } from './data/questions';
 import './App.css';
 
-type Screen = 'welcome' | 'quiz' | 'result' | 'video';
+type Screen = 'welcome' | 'quiz' | 'result';
 
 function App() {
   const [currentScreen, setCurrentScreen] = useState<Screen>('welcome');
@@ -44,13 +43,6 @@ function App() {
     setCurrentScreen('result'); // Сразу показываем результаты, минуя форму
   };
 
-  const handleGetBonus = () => {
-    setCurrentScreen('video');
-  };
-
-  const handleBackFromVideo = () => {
-    setCurrentScreen('result');
-  };
 
   return (
     <div className="App">
@@ -71,16 +63,9 @@ function App() {
           correctAnswers={correctAnswers}
           totalQuestions={80}
           sectionScores={sectionScores}
-          onGetBonus={handleGetBonus}
         />
       )}
       
-      {currentScreen === 'video' && (
-        <VideoScreen
-          level={currentLevel}
-          onBack={handleBackFromVideo}
-        />
-      )}
     </div>
   );
 }

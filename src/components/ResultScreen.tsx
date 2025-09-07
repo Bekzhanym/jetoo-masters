@@ -11,15 +11,13 @@ interface ResultScreenProps {
     analytical: number;
     english: number;
   };
-  onGetBonus: () => void;
 }
 
 const ResultScreen: React.FC<ResultScreenProps> = ({
   score,
   correctAnswers,
   totalQuestions,
-  sectionScores,
-  onGetBonus
+  sectionScores
 }) => {
   const level = getLevel(score);
   const percentage = Math.round((correctAnswers / totalQuestions) * 100);
@@ -126,43 +124,10 @@ const ResultScreen: React.FC<ResultScreenProps> = ({
                   </div>
                 </div>
 
-                <div className="section-card">
-                  <div className="section-header">
-                    <h4 className="section-name">Ағылшын тілі</h4>
-                    <span className="section-range">31-80 сұрақ</span>
-                  </div>
-                  <div className="section-score">
-                    <div className="section-number">{sectionScores.english}/50</div>
-                    <div 
-                      className="section-level"
-                      style={{ color: getSectionColor(sectionScores.english, 50) }}
-                    >
-                      {getSectionLevel(sectionScores.english, 50)}
-                    </div>
-                  </div>
-                  <div className="section-progress">
-                    <div 
-                      className="section-progress-fill"
-                      style={{ 
-                        width: `${(sectionScores.english / 50) * 100}%`,
-                        backgroundColor: getSectionColor(sectionScores.english, 50)
-                      }}
-                    ></div>
-                  </div>
-                </div>
               </div>
             </div>
           )}
 
-          <div className="bonus-section">
-            <p className="bonus-description">
-            Деңгейіңе сай арнайы видеосабақты тегін ал!
-            </p>
-            <button className="bonus-button" onClick={onGetBonus}>
-              <span className="bonus-icon">🎁</span>
-              Бонусты алу
-            </button>
-          </div>
         </div>
       </div>
     </div>
