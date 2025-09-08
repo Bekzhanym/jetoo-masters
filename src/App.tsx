@@ -3,7 +3,6 @@ import WelcomeScreen from './components/WelcomeScreen';
 import QuizScreen from './components/QuizScreen';
 import ResultScreen from './components/ResultScreen';
 import type { UserInfo } from './data/questions';
-import { getLevel } from './data/questions';
 import './App.css';
 
 type Screen = 'welcome' | 'quiz' | 'result';
@@ -17,7 +16,6 @@ function App() {
   });
   const [quizScore, setQuizScore] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState(0);
-  const [currentLevel, setCurrentLevel] = useState<string>('');
   const [sectionScores, setSectionScores] = useState<{
     critical: number;
     analytical: number;
@@ -38,8 +36,6 @@ function App() {
     if (sections) {
       setSectionScores(sections);
     }
-    const level = getLevel(score);
-    setCurrentLevel(level);
     setCurrentScreen('result'); // Сразу показываем результаты, минуя форму
   };
 
