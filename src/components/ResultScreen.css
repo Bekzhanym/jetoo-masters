@@ -37,8 +37,47 @@
   font-size: 2.5rem;
   font-weight: bold;
   color: #5257de;
-  margin: 0;
+  margin: 0 0 20px 0;
   animation: fadeIn 0.8s ease-in-out;
+}
+
+.user-info {
+  background: #f7fafc;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 20px;
+  border: 1px solid #e2e8f0;
+}
+
+.user-info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.user-info-item:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.user-info-label {
+  font-weight: 600;
+  color: #4a5568;
+  font-size: 14px;
+  min-width: 100px;
+  text-align: left;
+}
+
+.user-info-value {
+  color: #2d3748;
+  font-size: 14px;
+  text-align: right;
+  flex: 1;
+  margin-left: 16px;
+  word-break: break-word;
 }
 
 .result-content {

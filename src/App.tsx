@@ -7,8 +7,16 @@ import './App.css';
 
 type Screen = 'welcome' | 'quiz' | 'result';
 
+interface UserFormData {
+  fullName: string;
+  university: string;
+  specialty: string;
+  phoneNumber: string;
+}
+
 function App() {
   const [currentScreen, setCurrentScreen] = useState<Screen>('welcome');
+  const [userFormData, setUserFormData] = useState<UserFormData | null>(null);
   const [userInfo] = useState<UserInfo>({
     goal: "ҰБТ-да таңдау пәнім",
     difficulty: "Грамматика үйрену керек",
@@ -26,7 +34,8 @@ function App() {
     english: 0
   });
 
-  const handleWelcomeStart = () => {
+  const handleWelcomeStart = (userData: UserFormData) => {
+    setUserFormData(userData);
     setCurrentScreen('quiz');
   };
 
@@ -58,6 +67,7 @@ function App() {
           score={quizScore}
           correctAnswers={correctAnswers}
           totalQuestions={80}
+          userData={userFormData}
           sectionScores={sectionScores}
         />
       )}

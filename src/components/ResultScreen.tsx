@@ -1,11 +1,18 @@
 import React from 'react';
-import { getLevel, getLevelDescription } from '../data/questions';
 import './ResultScreen.css';
+
+interface UserFormData {
+  fullName: string;
+  university: string;
+  specialty: string;
+  phoneNumber: string;
+}
 
 interface ResultScreenProps {
   score: number;
   correctAnswers: number;
   totalQuestions: number;
+  userData?: UserFormData | null;
   sectionScores?: {
     critical: number;
     analytical: number;
@@ -17,11 +24,10 @@ const ResultScreen: React.FC<ResultScreenProps> = ({
   score,
   correctAnswers,
   totalQuestions,
+  userData,
   sectionScores
 }) => {
-  const level = getLevel(score);
   const percentage = Math.round((correctAnswers / totalQuestions) * 100);
-  const levelDescription = getLevelDescription(level);
 
   // Функция для получения уровня по секциям
   const getSectionLevel = (sectionScore: number, totalQuestions: number): string => {
@@ -46,6 +52,22 @@ const ResultScreen: React.FC<ResultScreenProps> = ({
       <div className="result-container">
         <div className="result-header">
           <h1 className="result-title">Нәтижеңіз</h1>
+          {userData && (
+            <div className="user-info">
+              <div className="user-info-item">
+                <span className="user-info-label">Аты-жөні:</span>
+                <span className="user-info-value">{userData.fullName}</span>
+              </div>
+              <div className="user-info-item">
+                <span className="user-info-label">Университет:</span>
+                <span className="user-info-value">{userData.university}</span>
+              </div>
+              <div className="user-info-item">
+                <span className="user-info-label">Мамандық:</span>
+                <span className="user-info-value">{userData.specialty}</span>
+              </div>
+            </div>
+          )}
         </div>
 
         <div className="result-content">
@@ -54,8 +76,8 @@ const ResultScreen: React.FC<ResultScreenProps> = ({
               {score}
             </div>
             <div className="score-info">
-              <h2 className="level-title">{level}</h2>
-              <p className="level-description">{levelDescription}</p>
+              <h2 className="level-title">Нәтиже</h2>
+              <p className="level-description">Тест аяқталды</p>
             </div>
           </div>
 
@@ -119,6 +141,31 @@ const ResultScreen: React.FC<ResultScreenProps> = ({
                       style={{ 
                         width: `${(sectionScores.analytical / 15) * 100}%`,
                         backgroundColor: getSectionColor(sectionScores.analytical, 15)
+                      }}
+                    ></div>
+                  </div>
+                </div>
+
+                <div className="section-card">
+                  <div className="section-header">
+                    <h4 className="section-name">Ағылшын</h4>
+                    <span className="section-range">31-80 сұрақ</span>
+                  </div>
+                  <div className="section-score">
+                    <div className="section-number">{sectionScores.english}/50</div>
+                    <div 
+                      className="section-level"
+                      style={{ color: getSectionColor(sectionScores.english, 50) }}
+                    >
+                      {getSectionLevel(sectionScores.english, 50)}
+                    </div>
+                  </div>
+                  <div className="section-progress">
+                    <div 
+                      className="section-progress-fill"
+                      style={{ 
+                        width: `${(sectionScores.english / 50) * 100}%`,
+                        backgroundColor: getSectionColor(sectionScores.english, 50)
                       }}
                     ></div>
                   </div>

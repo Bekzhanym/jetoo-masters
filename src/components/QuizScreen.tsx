@@ -15,46 +15,13 @@ const QuizScreen: React.FC<QuizScreenProps> = ({ onComplete }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [answers, setAnswers] = useState<(number | null)[]>(new Array(questions.length).fill(null));
-  const [score, setScore] = useState(0);
   const [showNextButton, setShowNextButton] = useState(false);
-  const [showFeedback, setShowFeedback] = useState(false);
-  const [isCorrect, setIsCorrect] = useState(false);
-  const [sectionScores, setSectionScores] = useState({
-    critical: 0,
-    analytical: 0,
-    english: 0
-  });
 
   const handleAnswerSelect = (answerIndex: number) => {
-    if (showFeedback) return; // Предотвращаем повторный выбор после показа результата
-    
     setSelectedAnswer(answerIndex);
     setShowNextButton(true);
-    
-    // Сразу показываем результат
-    const currentQ = questions[currentQuestion];
-    const correct = answerIndex === currentQ.correctAnswerIndex;
-    setIsCorrect(correct);
-    setShowFeedback(true);
-    
-    // Обновляем счетчики секций
-    const questionId = currentQ.id;
-    let section = '';
-    if (questionId >= 1 && questionId <= 15) {
-      section = 'critical';
-    } else if (questionId >= 16 && questionId <= 30) {
-      section = 'analytical';
-    } else if (questionId >= 31 && questionId <= 80) {
-      section = 'english';
-    }
-    
-    if (correct && section && section in sectionScores) {
-      setSectionScores(prev => ({
-        ...prev,
-        [section]: prev[section as keyof typeof prev] + 1
-      }));
-    }
   };
+
 
   const handleNext = () => {
     if (selectedAnswer !== null) {
@@ -62,26 +29,53 @@ const QuizScreen: React.FC<QuizScreenProps> = ({ onComplete }) => {
       newAnswers[currentQuestion] = selectedAnswer;
       setAnswers(newAnswers);
 
-      // Обновляем общий счет
-      const currentQ = questions[currentQuestion];
-      if (selectedAnswer === currentQ.correctAnswerIndex) {
-        setScore(score + currentQ.points);
-      }
-
       if (currentQuestion < questions.length - 1) {
+        // Переходим к следующему вопросу
         setCurrentQuestion(currentQuestion + 1);
         setSelectedAnswer(null);
         setShowNextButton(false);
-        setShowFeedback(false);
-        setIsCorrect(false);
       } else {
-        // Тест завершен - передаем результаты по секциям
-        const correctAnswers = newAnswers.filter((answer, index) => 
+        // Тест завершен - подсчитываем все результаты
+        const finalAnswers = [...newAnswers];
+        finalAnswers[currentQuestion] = selectedAnswer;
+        
+        // Подсчитываем правильные ответы
+        const correctAnswers = finalAnswers.filter((answer, index) => 
           answer === questions[index].correctAnswerIndex
         ).length;
         
-        // Передаем результаты по секциям
-        onComplete(score + (selectedAnswer === currentQ.correctAnswerIndex ? currentQ.points : 0), correctAnswers, sectionScores);
+        // Подсчитываем общий балл
+        let totalScore = 0;
+        const finalSectionScores = {
+          critical: 0,
+          analytical: 0,
+          english: 0
+        };
+        
+        finalAnswers.forEach((answer, index) => {
+          const question = questions[index];
+          if (answer === question.correctAnswerIndex) {
+            totalScore += question.points;
+            
+            // Обновляем счетчики секций
+            const questionId = question.id;
+            let section = '';
+            if (questionId >= 1 && questionId <= 15) {
+              section = 'critical';
+            } else if (questionId >= 16 && questionId <= 30) {
+              section = 'analytical';
+            } else if (questionId >= 31 && questionId <= 80) {
+              section = 'english';
+            }
+            
+            if (section && section in finalSectionScores) {
+              finalSectionScores[section as keyof typeof finalSectionScores]++;
+            }
+          }
+        });
+        
+        // Передаем результаты
+        onComplete(totalScore, correctAnswers, finalSectionScores);
       }
     }
   };
@@ -139,45 +133,21 @@ const QuizScreen: React.FC<QuizScreenProps> = ({ onComplete }) => {
           <div className="answers-section">
             {currentQ.options.map((option, index) => {
               const isSelected = selectedAnswer === index;
-              const isCorrectAnswer = index === currentQ.correctAnswerIndex;
-              const isWrongAnswer = isSelected && !isCorrectAnswer && showFeedback;
               
               return (
                 <div
                   key={index}
-                  className={`answer-option ${isSelected ? 'selected' : ''} ${
-                    showFeedback ? (isCorrectAnswer ? 'correct' : isWrongAnswer ? 'wrong' : '') : ''
-                  }`}
+                  className={`answer-option ${isSelected ? 'selected' : ''}`}
                   onClick={() => handleAnswerSelect(index)}
                 >
                   <div className="answer-radio">
                     <div className={`radio-circle ${isSelected ? 'selected' : ''}`}></div>
-                    {showFeedback && isCorrectAnswer && (
-                      <div className="correct-icon">✓</div>
-                    )}
-                    {showFeedback && isWrongAnswer && (
-                      <div className="wrong-icon">✗</div>
-                    )}
                   </div>
                   <span className="answer-text">{option}</span>
                 </div>
               );
             })}
           </div>
-          
-          {showFeedback && (
-            <div className={`feedback-message ${isCorrect ? 'correct' : 'wrong'}`}>
-              <div className="feedback-icon">
-                {isCorrect ? '✓' : '✗'}
-              </div>
-              <div className="feedback-text">
-                {isCorrect ? 'Дұрыс жауап!' : 'Қате жауап!'}
-              </div>
-              <div className="feedback-score">
-                Балл: {isCorrect ? '1' : '0'} / 1
-              </div>
-            </div>
-          )}
         </div>
 
         <div className="quiz-footer">
