@@ -16,15 +16,15 @@
 
 /* Размеры */
 .logo-container.small .logo-image {
-  height: 30px;
-}
-
-.logo-container.medium .logo-image {
   height: 40px;
 }
 
+.logo-container.medium .logo-image {
+  height: 55px;
+}
+
 .logo-container.large .logo-image {
-  height: 50px;
+  height: 65px;
 }
 
 /* Мобильная адаптация */
@@ -35,15 +35,15 @@
   }
   
   .logo-container.large .logo-image {
-    height: 45px;
+    height: 55px;
   }
   
   .logo-container.medium .logo-image {
-    height: 35px;
+    height: 45px;
   }
   
   .logo-container.small .logo-image {
-    height: 25px;
+    height: 35px;
   }
 }
 
@@ -54,14 +54,14 @@
   }
   
   .logo-container.large .logo-image {
-    height: 40px;
+    height: 50px;
   }
   
   .logo-container.medium .logo-image {
-    height: 30px;
+    height: 40px;
   }
   
   .logo-container.small .logo-image {
-    height: 22px;
+    height: 30px;
   }
 } 

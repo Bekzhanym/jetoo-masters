@@ -14,6 +14,19 @@
   overflow-y: auto;
 }
 
+/* Специальные стили для логотипа в QuizScreen */
+.quiz-screen .logo-container {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+}
+
+.quiz-screen .logo-container.large .logo-image {
+  height: 100px;
+}
+
 .quiz-container {
   background: white;
   border-radius: 0;
@@ -409,6 +422,16 @@
 
 /* Мобильная адаптация */
 @media (max-width: 768px) {
+  .quiz-screen .logo-container {
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .quiz-screen .logo-container.large .logo-image {
+    height: 75px;
+  }
+  
   .quiz-container {
     padding: 10px;
   }
@@ -480,6 +503,16 @@
 }
 
 @media (max-width: 480px) {
+  .quiz-screen .logo-container {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .quiz-screen .logo-container.large .logo-image {
+    height: 65px;
+  }
+  
   .quiz-container {
     padding: 8px;
   }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import UserForm from './UserForm';
+import Logo from './Logo';
 import './WelcomeScreen.css';
 
 interface UserFormData {
@@ -30,9 +31,9 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onStart }) => {
 
   return (
     <div className="welcome-screen">
+      <Logo size="large" />
       <div className="welcome-container">
         <div className="welcome-content">
-          <h1 className="welcome-title">ҰБТ Тесті</h1>
           <p className="welcome-subtitle">Магистратураға дайындық тесті</p>
           <p className="welcome-description">
             Тестті бастау үшін анкетаны толтырыңыз

@@ -93,7 +93,7 @@ const QuizScreen: React.FC<QuizScreenProps> = ({ onComplete }) => {
 
   return (
     <div className="quiz-screen">
-      <Logo size="medium" />
+      <Logo size="large" />
       <div className="quiz-container">
         <div className="quiz-header">
           <div className="progress-section">
