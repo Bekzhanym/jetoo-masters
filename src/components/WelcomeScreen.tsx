@@ -34,10 +34,11 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onStart }) => {
       <Logo size="large" />
       <div className="welcome-container">
         <div className="welcome-content">
-          <p className="welcome-subtitle">Магистратураға дайындық тесті</p>
-          <p className="welcome-description">
-            Тестті бастау үшін анкетаны толтырыңыз
-          </p>
+        </div>
+
+        {/* Заголовок теста */}
+        <div className="test-title-container">
+          <h1 className="test-title">Магистратурадан сынақ тесті</h1>
         </div>
 
         {/* Анимированная кнопка */}
@@ -46,8 +47,7 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onStart }) => {
             className="animated-button"
             onClick={handleStartClick}
           >
-            <span className="button-text">Тестті</span>
-            <span className="button-arrow">Бастау &gt;</span>
+            <span className="button-text">Бастау</span>
             <div className="pulse-ring"></div>
             <div className="pulse-ring pulse-ring-2"></div>
             <div className="pulse-ring pulse-ring-3"></div>

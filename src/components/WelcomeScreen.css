@@ -16,14 +16,24 @@
 
 .welcome-screen .logo-container {
   position: absolute;
-  top: 30px;
+  top: 40%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   z-index: 20;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(-50%, -50%) translateY(0px);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-15px);
+  }
 }
 
 .welcome-screen .logo-container.large .logo-image {
-  height: 100px;
+  height: 250px;
 }
 
 .welcome-container {
@@ -84,10 +94,43 @@
   opacity: 1;
 }
 
+/* Заголовок теста */
+.test-title-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  margin-bottom: 20px;
+}
+
+.test-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  margin: 0;
+  color: #2c3e50;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Анимированная кнопка */
 .animated-button-container {
   position: absolute;
-  bottom: 65%;
+  top: 60%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
@@ -180,13 +223,13 @@
 /* Мобильная адаптация */
 @media (max-width: 768px) {
   .welcome-screen .logo-container {
-    top: 20px;
+    top: 60;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
   }
   
   .welcome-screen .logo-container.large .logo-image {
-    height: 85px;
+    height: 150px;
   }
   
   .animated-button {
@@ -204,8 +247,12 @@
     font-size: 0.8rem;
   }
   
+  .test-title {
+    font-size: 2rem;
+  }
+  
   .animated-button-container {
-    bottom: 60%;
+    top: 65%;
   }
   
   .loading-spinner {
@@ -220,13 +267,13 @@
 
 @media (max-width: 480px) {
   .welcome-screen .logo-container {
-    top: 15px;
+    top: 40%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
   }
   
   .welcome-screen .logo-container.large .logo-image {
-    height: 75px;
+    height: 120px;
   }
   
   .animated-button {
@@ -244,8 +291,12 @@
     font-size: 0.7rem;
   }
   
+  .test-title {
+    font-size: 1.6rem;
+  }
+  
   .animated-button-container {
-    bottom: 55%;
+    top: 60%;
   }
   
   .loading-spinner {

@@ -3,6 +3,7 @@ import { getFormattedQuestions } from '../data/questions';
 import type { UserInfo } from '../data/questions';
 import Logo from './Logo';
 import AudioPlayer from './AudioPlayer';
+import Timer from './Timer';
 import './QuizScreen.css';
 
 interface QuizScreenProps {
@@ -22,6 +23,52 @@ const QuizScreen: React.FC<QuizScreenProps> = ({ onComplete }) => {
     setShowNextButton(true);
   };
 
+
+  const handleTimeUp = () => {
+    // Время истекло - автоматически завершаем тест
+    const finalAnswers = [...answers];
+    if (selectedAnswer !== null) {
+      finalAnswers[currentQuestion] = selectedAnswer;
+    }
+    
+    // Подсчитываем правильные ответы
+    const correctAnswers = finalAnswers.filter((answer, index) => 
+      answer === questions[index].correctAnswerIndex
+    ).length;
+    
+    // Подсчитываем общий балл
+    let totalScore = 0;
+    const finalSectionScores = {
+      critical: 0,
+      analytical: 0,
+      english: 0
+    };
+    
+    finalAnswers.forEach((answer, index) => {
+      const question = questions[index];
+      if (answer === question.correctAnswerIndex) {
+        totalScore += question.points;
+        
+        // Обновляем счетчики секций
+        const questionId = question.id;
+        let section = '';
+        if (questionId >= 1 && questionId <= 15) {
+          section = 'critical';
+        } else if (questionId >= 16 && questionId <= 30) {
+          section = 'analytical';
+        } else if (questionId >= 31 && questionId <= 80) {
+          section = 'english';
+        }
+        
+        if (section && section in finalSectionScores) {
+          finalSectionScores[section as keyof typeof finalSectionScores]++;
+        }
+      }
+    });
+    
+    // Передаем результаты
+    onComplete(totalScore, correctAnswers, finalSectionScores);
+  };
 
   const handleNext = () => {
     if (selectedAnswer !== null) {
@@ -93,6 +140,7 @@ const QuizScreen: React.FC<QuizScreenProps> = ({ onComplete }) => {
 
   return (
     <div className="quiz-screen">
+      <Timer duration={120} onTimeUp={handleTimeUp} />
       <Logo size="large" />
       <div className="quiz-container">
         <div className="quiz-header">
