@@ -137,6 +137,20 @@
   background-color: transparent;
 }
 
+.dropdown-item.more-results {
+  color: #718096;
+  font-style: italic;
+  cursor: default;
+  background-color: #f8f9fa;
+  font-size: 12px;
+  text-align: center;
+  padding: 8px 16px;
+}
+
+.dropdown-item.more-results:hover {
+  background-color: #f8f9fa;
+}
+
 .specialty-code {
   font-weight: 600;
   color: #3b82f6;

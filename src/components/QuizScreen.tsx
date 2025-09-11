@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { getFormattedQuestions } from '../data/questions';
 import type { UserInfo } from '../data/questions';
-import type { Question } from '../types';
 import Logo from './Logo';
 import AudioPlayer from './AudioPlayer';
 import Timer from './Timer';
@@ -13,7 +12,7 @@ interface QuizScreenProps {
 }
 
 const QuizScreen: React.FC<QuizScreenProps> = ({ onComplete }) => {
-  const questions: Question[] = getFormattedQuestions();
+  const questions = getFormattedQuestions();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [answers, setAnswers] = useState<(number | null)[]>(new Array(questions.length).fill(null));
@@ -34,7 +33,7 @@ const QuizScreen: React.FC<QuizScreenProps> = ({ onComplete }) => {
     
     // Подсчитываем правильные ответы
     const correctAnswers = finalAnswers.filter((answer, index) => 
-      answer === questions[index].correctAnswer
+      answer === questions[index].correctAnswerIndex
     ).length;
     
     // Подсчитываем общий балл
@@ -47,19 +46,19 @@ const QuizScreen: React.FC<QuizScreenProps> = ({ onComplete }) => {
     
     finalAnswers.forEach((answer, index) => {
       const question = questions[index];
-      if (answer === question.correctAnswer) {
+      if (answer === question.correctAnswerIndex) {
         totalScore += question.points;
         
-            // Обновляем счетчики секций
-            const questionId = question.id;
-            let section = '';
-            if (questionId >= 1 && questionId <= 15) {
-              section = 'critical';
-            } else if (questionId >= 16 && questionId <= 95) {
-              section = 'analytical';
-            } else if (questionId >= 31 && questionId <= 80) {
-              section = 'english';
-            }
+        // Обновляем счетчики секций
+        const questionId = question.id;
+        let section = '';
+        if (questionId >= 1 && questionId <= 15) {
+          section = 'critical';
+        } else if (questionId >= 16 && questionId <= 30) {
+          section = 'analytical';
+        } else if (questionId >= 31 && questionId <= 80) {
+          section = 'english';
+        }
         
         if (section && section in finalSectionScores) {
           finalSectionScores[section as keyof typeof finalSectionScores]++;
@@ -89,7 +88,7 @@ const QuizScreen: React.FC<QuizScreenProps> = ({ onComplete }) => {
         
         // Подсчитываем правильные ответы
         const correctAnswers = finalAnswers.filter((answer, index) => 
-          answer === questions[index].correctAnswer
+          answer === questions[index].correctAnswerIndex
         ).length;
         
         // Подсчитываем общий балл
@@ -102,7 +101,7 @@ const QuizScreen: React.FC<QuizScreenProps> = ({ onComplete }) => {
         
         finalAnswers.forEach((answer, index) => {
           const question = questions[index];
-          if (answer === question.correctAnswer) {
+          if (answer === question.correctAnswerIndex) {
             totalScore += question.points;
             
             // Обновляем счетчики секций
@@ -110,7 +109,7 @@ const QuizScreen: React.FC<QuizScreenProps> = ({ onComplete }) => {
             let section = '';
             if (questionId >= 1 && questionId <= 15) {
               section = 'critical';
-            } else if (questionId >= 16 && questionId <= 95) {
+            } else if (questionId >= 16 && questionId <= 30) {
               section = 'analytical';
             } else if (questionId >= 31 && questionId <= 80) {
               section = 'english';
@@ -141,7 +140,7 @@ const QuizScreen: React.FC<QuizScreenProps> = ({ onComplete }) => {
 
   return (
     <div className="quiz-screen">
-      <Timer duration={120} onTimeUp={handleTimeUp} />
+      <Timer duration={110} onTimeUp={handleTimeUp} />
       <Logo size="large" />
       <div className="quiz-container">
         <div className="quiz-header">
@@ -157,20 +156,20 @@ const QuizScreen: React.FC<QuizScreenProps> = ({ onComplete }) => {
 
         <div className="quiz-content">
           <div className="question-section">
-            {/* Отображаем текст для анализа, если он есть */}
-            {currentQ.hasText && currentQ.textContent && (
+            <h2 className="question-text">{currentQ.question}</h2>
+            <p className="question-hint">Бір жауапты таңдаңыз</p>
+            
+            {currentQ.type === 'TEXT_QUESTION' && currentQ.textContent && (
               <div className="text-content">
-                <h3 className="text-title">Мәтін:</h3>
-                <div className="text-body">
-                  {currentQ.textContent.split('\n').map((line: string, index: number) => (
-                    <p key={index} className="text-paragraph">{line}</p>
+                <div className="text-content-body">
+                  {currentQ.textContent.split('\n').map((paragraph, index) => (
+                    <p key={index} className="text-paragraph">
+                      {paragraph}
+                    </p>
                   ))}
                 </div>
               </div>
             )}
-            
-            <h2 className="question-text">{currentQ.question}</h2>
-            <p className="question-hint">Бір жауапты таңдаңыз</p>
             
             {currentQ.hasImage && currentQ.imageUrl && (
               <div className="question-image">
