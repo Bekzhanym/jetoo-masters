@@ -1,7 +1,10 @@
 .welcome-screen {
   min-height: 100vh;
   width: 100vw;
-  background: white;
+  background-image: url('../assets/jetoo-desktop.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -97,7 +100,7 @@
 /* Заголовок теста */
 .test-title-container {
   position: absolute;
-  top: 50%;
+  top: 25%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
@@ -130,7 +133,7 @@
 /* Анимированная кнопка */
 .animated-button-container {
   position: absolute;
-  top: 60%;
+  top: 40%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
@@ -156,14 +159,16 @@
   box-shadow: 0 8px 25px rgba(37, 90, 226, 0.3);
   transition: all 0.3s ease;
   overflow: hidden;
+  animation: floatButton 3s ease-in-out infinite;
 }
 
 .animated-button:hover {
-  transform: translateY(-3px);
+  transform: translateY(-11px);
   box-shadow: 0 12px 35px rgba(37, 90, 226, 0.4);
   background: 
     radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.4) 0%, transparent 50%),
     linear-gradient(135deg, #2d6af0, #255AE2);
+  animation-play-state: paused;
 }
 
 .animated-button:active {
@@ -218,10 +223,23 @@
   }
 }
 
+@keyframes floatButton {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
 
 
 /* Мобильная адаптация */
 @media (max-width: 768px) {
+  .welcome-screen {
+    background-image: url('../assets/jetoo-mobile.jpg');
+  }
+  
   .welcome-screen .logo-container {
     top: 60;
     left: 50%;
@@ -252,7 +270,7 @@
   }
   
   .animated-button-container {
-    top: 65%;
+    top: 45%;
   }
   
   .loading-spinner {
@@ -296,7 +314,7 @@
   }
   
   .animated-button-container {
-    top: 60%;
+    top: 40%;
   }
   
   .loading-spinner {

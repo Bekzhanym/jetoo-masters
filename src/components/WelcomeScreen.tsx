@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import UserForm from './UserForm';
-import Logo from './Logo';
 import './WelcomeScreen.css';
 
 interface UserFormData {
@@ -31,15 +30,8 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onStart }) => {
 
   return (
     <div className="welcome-screen">
-      <Logo size="large" />
       <div className="welcome-container">
-        <div className="welcome-content">
-        </div>
-
         {/* Заголовок теста */}
-        <div className="test-title-container">
-          <h1 className="test-title">Магистратурадан сынақ тесті</h1>
-        </div>
 
         {/* Анимированная кнопка */}
         <div className="animated-button-container">
