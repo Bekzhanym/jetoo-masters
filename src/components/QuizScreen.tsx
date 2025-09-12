@@ -24,6 +24,7 @@ const QuizScreen: React.FC<QuizScreenProps> = ({ onComplete }) => {
 
 
 
+
   const handleTimeUp = () => {
     // Время истекло - автоматически завершаем тест
     const finalAnswers = [...answers];
@@ -151,6 +152,7 @@ const QuizScreen: React.FC<QuizScreenProps> = ({ onComplete }) => {
               Сұрақ {currentQuestion + 1} / {questions.length}
             </div>
           </div>
+          
         </div>
 
         <div className="quiz-content">

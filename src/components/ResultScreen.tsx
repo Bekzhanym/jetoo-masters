@@ -129,12 +129,6 @@ const ResultScreen: React.FC<ResultScreenProps> = ({
             </div>
           </div>
 
-          <div className="stats-section">
-            <div className="stat-item">
-              <div className="stat-label">Дұрыс жауаптар</div>
-              <div className="stat-value">{correctAnswers}</div>
-            </div>
-          </div>
 
           {sectionScores && (
             <div className="sections-results">

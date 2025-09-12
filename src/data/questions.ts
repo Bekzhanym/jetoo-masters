@@ -688,8 +688,9 @@ export const questions = [
     {
       "id": 49,
       "category": "Ағылшын",
-      "type": "SINGLE_ANSWER_OPTIONS",
-      "text": "[Fairies passage] What are fairies usually like in modern stories?",
+      "type": "TEXT_QUESTION",
+      "text": "Read the following passage and answer the question:",
+      "textContent": "(1) Fairies today are the stuff of children's stories, little magical people with wings, often shining with light. Typically pretty and female, like Tinkerbell in Peter Pan, they usually use their magic to do small things and are mostly friendly to humans.\\n\\n(2) We owe many of our modern ideas about fairies to Shakespeare and stories from the 18th and 19th centuries. Although we can see the origins of fairies as far back as the Ancient Greeks, we can see similar creatures in many cultures. The earliest fairy-like creatures can be found in the Greek idea that trees and rivers had spirits called dryads and nymphs. Some people think these creatures were originally the gods of earlier, pagan religions that worshipped nature. They were replaced by the Greek and Roman gods, and then later by the Christian God, and became smaller, less powerful figures as they lost importance.\\n\\n(3) Another explanation suggests the origin of fairies is a memory of real people, not spirits. So, for example, when tribes with metal weapons invaded land where people only used stone weapons, some of the people escaped and hid in forests and caves. Further support for this idea is that fairies were thought to be afraid of iron and could not touch it. Living outside of society, the hiding people probably stole food and attacked villages. This might explain why fairies were often described as playing tricks on humans. Hundreds of years ago, people actually believed that fairies stole new babies and replaced them with a 'changeling' – a fairy baby – or that they took new mothers and made them feed fairy babies with their milk.\\n\\n(4) While most people no longer believe in fairies, only a hundred years ago some people were very willing to think they might exist. In 1917, 16-year-old Elsie Wright took two photos of her cousin, nine-year-old Frances Griffiths, sitting with fairies. Some photography experts thought they were fake, while others weren't sure. But Arthur Conan Doyle, the writer of the Sherlock Holmes detective stories, believed they were real. He published the original pictures, and three more the girls took for him, in a magazine called The Strand, in 1920. The girls only admitted the photos were fake years later in 1983, created using pictures of dancers that Elsie copied from a book.\\n\\nWhat are fairies usually like in modern stories?",
       "options": {
         "A": "Scary and dangerous",
         "B": "Tiny and magical",
@@ -701,8 +702,9 @@ export const questions = [
     {
       "id": 50,
       "category": "Ағылшын",
-      "type": "SINGLE_ANSWER_OPTIONS",
-      "text": "[Fairies passage] What culture had early fairy-like creatures such as dryads and nymphs?",
+      "type": "TEXT_QUESTION",
+      "text": "Read the following passage and answer the question:",
+      "textContent": "(1) Fairies today are the stuff of children's stories, little magical people with wings, often shining with light. Typically pretty and female, like Tinkerbell in Peter Pan, they usually use their magic to do small things and are mostly friendly to humans.\n\n(2) We owe many of our modern ideas about fairies to Shakespeare and stories from the 18th and 19th centuries. Although we can see the origins of fairies as far back as the Ancient Greeks, we can see similar creatures in many cultures. The earliest fairy-like creatures can be found in the Greek idea that trees and rivers had spirits called dryads and nymphs. Some people think these creatures were originally the gods of earlier, pagan religions that worshipped nature. They were replaced by the Greek and Roman gods, and then later by the Christian God, and became smaller, less powerful figures as they lost importance.\n\n(3) Another explanation suggests the origin of fairies is a memory of real people, not spirits. So, for example, when tribes with metal weapons invaded land where people only used stone weapons, some of the people escaped and hid in forests and caves. Further support for this idea is that fairies were thought to be afraid of iron and could not touch it. Living outside of society, the hiding people probably stole food and attacked villages. This might explain why fairies were often described as playing tricks on humans. Hundreds of years ago, people actually believed that fairies stole new babies and replaced them with a 'changeling' – a fairy baby – or that they took new mothers and made them feed fairy babies with their milk.\n\n(4) While most people no longer believe in fairies, only a hundred years ago some people were very willing to think they might exist. In 1917, 16-year-old Elsie Wright took two photos of her cousin, nine-year-old Frances Griffiths, sitting with fairies. Some photography experts thought they were fake, while others weren't sure. But Arthur Conan Doyle, the writer of the Sherlock Holmes detective stories, believed they were real. He published the original pictures, and three more the girls took for him, in a magazine called The Strand, in 1920. The girls only admitted the photos were fake years later in 1983, created using pictures of dancers that Elsie copied from a book.\n\nWhat culture had early fairy-like creatures such as dryads and nymphs?",
       "options": {
         "A": "Roman",
         "B": "Egyptian",
@@ -714,8 +716,9 @@ export const questions = [
     {
       "id": 51,
       "category": "Ағылшын",
-      "type": "SINGLE_ANSWER_OPTIONS",
-      "text": "[Fairies passage] What is a changeling, according to old beliefs?",
+      "type": "TEXT_QUESTION",
+      "text": "Read the following passage and answer the question:",
+      "textContent": "(1) Fairies today are the stuff of children's stories, little magical people with wings, often shining with light. Typically pretty and female, like Tinkerbell in Peter Pan, they usually use their magic to do small things and are mostly friendly to humans.\n\n(2) We owe many of our modern ideas about fairies to Shakespeare and stories from the 18th and 19th centuries. Although we can see the origins of fairies as far back as the Ancient Greeks, we can see similar creatures in many cultures. The earliest fairy-like creatures can be found in the Greek idea that trees and rivers had spirits called dryads and nymphs. Some people think these creatures were originally the gods of earlier, pagan religions that worshipped nature. They were replaced by the Greek and Roman gods, and then later by the Christian God, and became smaller, less powerful figures as they lost importance.\n\n(3) Another explanation suggests the origin of fairies is a memory of real people, not spirits. So, for example, when tribes with metal weapons invaded land where people only used stone weapons, some of the people escaped and hid in forests and caves. Further support for this idea is that fairies were thought to be afraid of iron and could not touch it. Living outside of society, the hiding people probably stole food and attacked villages. This might explain why fairies were often described as playing tricks on humans. Hundreds of years ago, people actually believed that fairies stole new babies and replaced them with a 'changeling' – a fairy baby – or that they took new mothers and made them feed fairy babies with their milk.\n\n(4) While most people no longer believe in fairies, only a hundred years ago some people were very willing to think they might exist. In 1917, 16-year-old Elsie Wright took two photos of her cousin, nine-year-old Frances Griffiths, sitting with fairies. Some photography experts thought they were fake, while others weren't sure. But Arthur Conan Doyle, the writer of the Sherlock Holmes detective stories, believed they were real. He published the original pictures, and three more the girls took for him, in a magazine called The Strand, in 1920. The girls only admitted the photos were fake years later in 1983, created using pictures of dancers that Elsie copied from a book.\n\nWhat is a changeling, according to old beliefs?",
       "options": {
         "A": "A fairy who changes into a tree",
         "B": "A baby fairy left instead of a human child",
@@ -727,8 +730,9 @@ export const questions = [
     {
       "id": 52,
       "category": "Ағылшын",
-      "type": "SINGLE_ANSWER_OPTIONS",
-      "text": "[Fairies passage] When did the girls admit their fairy photos were fake?",
+      "type": "TEXT_QUESTION",
+      "text": "Read the following passage and answer the question:",
+      "textContent": "(1) Fairies today are the stuff of children's stories, little magical people with wings, often shining with light. Typically pretty and female, like Tinkerbell in Peter Pan, they usually use their magic to do small things and are mostly friendly to humans.\n\n(2) We owe many of our modern ideas about fairies to Shakespeare and stories from the 18th and 19th centuries. Although we can see the origins of fairies as far back as the Ancient Greeks, we can see similar creatures in many cultures. The earliest fairy-like creatures can be found in the Greek idea that trees and rivers had spirits called dryads and nymphs. Some people think these creatures were originally the gods of earlier, pagan religions that worshipped nature. They were replaced by the Greek and Roman gods, and then later by the Christian God, and became smaller, less powerful figures as they lost importance.\n\n(3) Another explanation suggests the origin of fairies is a memory of real people, not spirits. So, for example, when tribes with metal weapons invaded land where people only used stone weapons, some of the people escaped and hid in forests and caves. Further support for this idea is that fairies were thought to be afraid of iron and could not touch it. Living outside of society, the hiding people probably stole food and attacked villages. This might explain why fairies were often described as playing tricks on humans. Hundreds of years ago, people actually believed that fairies stole new babies and replaced them with a 'changeling' – a fairy baby – or that they took new mothers and made them feed fairy babies with their milk.\n\n(4) While most people no longer believe in fairies, only a hundred years ago some people were very willing to think they might exist. In 1917, 16-year-old Elsie Wright took two photos of her cousin, nine-year-old Frances Griffiths, sitting with fairies. Some photography experts thought they were fake, while others weren't sure. But Arthur Conan Doyle, the writer of the Sherlock Holmes detective stories, believed they were real. He published the original pictures, and three more the girls took for him, in a magazine called The Strand, in 1920. The girls only admitted the photos were fake years later in 1983, created using pictures of dancers that Elsie copied from a book.\n\nWhen did the girls admit their fairy photos were fake?",
       "options": {
         "A": "1920",
         "B": "1917",
@@ -740,8 +744,9 @@ export const questions = [
     {
       "id": 53,
       "category": "Ағылшын",
-      "type": "SINGLE_ANSWER_OPTIONS",
-      "text": "[Fairies passage] Who is Tinkerbell?",
+      "type": "TEXT_QUESTION",
+      "text": "Read the following passage and answer the question:",
+      "textContent": "(1) Fairies today are the stuff of children's stories, little magical people with wings, often shining with light. Typically pretty and female, like Tinkerbell in Peter Pan, they usually use their magic to do small things and are mostly friendly to humans.\n\n(2) We owe many of our modern ideas about fairies to Shakespeare and stories from the 18th and 19th centuries. Although we can see the origins of fairies as far back as the Ancient Greeks, we can see similar creatures in many cultures. The earliest fairy-like creatures can be found in the Greek idea that trees and rivers had spirits called dryads and nymphs. Some people think these creatures were originally the gods of earlier, pagan religions that worshipped nature. They were replaced by the Greek and Roman gods, and then later by the Christian God, and became smaller, less powerful figures as they lost importance.\n\n(3) Another explanation suggests the origin of fairies is a memory of real people, not spirits. So, for example, when tribes with metal weapons invaded land where people only used stone weapons, some of the people escaped and hid in forests and caves. Further support for this idea is that fairies were thought to be afraid of iron and could not touch it. Living outside of society, the hiding people probably stole food and attacked villages. This might explain why fairies were often described as playing tricks on humans. Hundreds of years ago, people actually believed that fairies stole new babies and replaced them with a 'changeling' – a fairy baby – or that they took new mothers and made them feed fairy babies with their milk.\n\n(4) While most people no longer believe in fairies, only a hundred years ago some people were very willing to think they might exist. In 1917, 16-year-old Elsie Wright took two photos of her cousin, nine-year-old Frances Griffiths, sitting with fairies. Some photography experts thought they were fake, while others weren't sure. But Arthur Conan Doyle, the writer of the Sherlock Holmes detective stories, believed they were real. He published the original pictures, and three more the girls took for him, in a magazine called The Strand, in 1920. The girls only admitted the photos were fake years later in 1983, created using pictures of dancers that Elsie copied from a book.\n\nWho is Tinkerbell?",
       "options": {
         "A": "A fairy",
         "B": "A writer",
@@ -753,8 +758,9 @@ export const questions = [
     {
       "id": 54,
       "category": "Ағылшын",
-      "type": "SINGLE_ANSWER_OPTIONS",
-      "text": "[Fairies passage] Where did the idea of dryads and nymphs come from?",
+      "type": "TEXT_QUESTION",
+      "text": "Read the following passage and answer the question:",
+      "textContent": "(1) Fairies today are the stuff of children's stories, little magical people with wings, often shining with light. Typically pretty and female, like Tinkerbell in Peter Pan, they usually use their magic to do small things and are mostly friendly to humans.\n\n(2) We owe many of our modern ideas about fairies to Shakespeare and stories from the 18th and 19th centuries. Although we can see the origins of fairies as far back as the Ancient Greeks, we can see similar creatures in many cultures. The earliest fairy-like creatures can be found in the Greek idea that trees and rivers had spirits called dryads and nymphs. Some people think these creatures were originally the gods of earlier, pagan religions that worshipped nature. They were replaced by the Greek and Roman gods, and then later by the Christian God, and became smaller, less powerful figures as they lost importance.\n\n(3) Another explanation suggests the origin of fairies is a memory of real people, not spirits. So, for example, when tribes with metal weapons invaded land where people only used stone weapons, some of the people escaped and hid in forests and caves. Further support for this idea is that fairies were thought to be afraid of iron and could not touch it. Living outside of society, the hiding people probably stole food and attacked villages. This might explain why fairies were often described as playing tricks on humans. Hundreds of years ago, people actually believed that fairies stole new babies and replaced them with a 'changeling' – a fairy baby – or that they took new mothers and made them feed fairy babies with their milk.\n\n(4) While most people no longer believe in fairies, only a hundred years ago some people were very willing to think they might exist. In 1917, 16-year-old Elsie Wright took two photos of her cousin, nine-year-old Frances Griffiths, sitting with fairies. Some photography experts thought they were fake, while others weren't sure. But Arthur Conan Doyle, the writer of the Sherlock Holmes detective stories, believed they were real. He published the original pictures, and three more the girls took for him, in a magazine called The Strand, in 1920. The girls only admitted the photos were fake years later in 1983, created using pictures of dancers that Elsie copied from a book.\n\nWhere did the idea of dryads and nymphs come from?",
       "options": {
         "A": "France",
         "B": "England",
@@ -766,8 +772,9 @@ export const questions = [
     {
       "id": 55,
       "category": "Ағылшын",
-      "type": "SINGLE_ANSWER_OPTIONS",
-      "text": "[Fairies passage] What were the fairies in the old stories afraid of?",
+      "type": "TEXT_QUESTION",
+      "text": "Read the following passage and answer the question:",
+      "textContent": "(1) Fairies today are the stuff of children's stories, little magical people with wings, often shining with light. Typically pretty and female, like Tinkerbell in Peter Pan, they usually use their magic to do small things and are mostly friendly to humans.\n\n(2) We owe many of our modern ideas about fairies to Shakespeare and stories from the 18th and 19th centuries. Although we can see the origins of fairies as far back as the Ancient Greeks, we can see similar creatures in many cultures. The earliest fairy-like creatures can be found in the Greek idea that trees and rivers had spirits called dryads and nymphs. Some people think these creatures were originally the gods of earlier, pagan religions that worshipped nature. They were replaced by the Greek and Roman gods, and then later by the Christian God, and became smaller, less powerful figures as they lost importance.\n\n(3) Another explanation suggests the origin of fairies is a memory of real people, not spirits. So, for example, when tribes with metal weapons invaded land where people only used stone weapons, some of the people escaped and hid in forests and caves. Further support for this idea is that fairies were thought to be afraid of iron and could not touch it. Living outside of society, the hiding people probably stole food and attacked villages. This might explain why fairies were often described as playing tricks on humans. Hundreds of years ago, people actually believed that fairies stole new babies and replaced them with a 'changeling' – a fairy baby – or that they took new mothers and made them feed fairy babies with their milk.\n\n(4) While most people no longer believe in fairies, only a hundred years ago some people were very willing to think they might exist. In 1917, 16-year-old Elsie Wright took two photos of her cousin, nine-year-old Frances Griffiths, sitting with fairies. Some photography experts thought they were fake, while others weren't sure. But Arthur Conan Doyle, the writer of the Sherlock Holmes detective stories, believed they were real. He published the original pictures, and three more the girls took for him, in a magazine called The Strand, in 1920. The girls only admitted the photos were fake years later in 1983, created using pictures of dancers that Elsie copied from a book.\n\nWhat were the fairies in the old stories afraid of?",
       "options": {
         "A": "Trees",
         "B": "Water",
@@ -779,8 +786,9 @@ export const questions = [
     {
       "id": 56,
       "category": "Ағылшын",
-      "type": "SINGLE_ANSWER_OPTIONS",
-      "text": "[Fairies passage] Who believed the fairy photos were real?",
+      "type": "TEXT_QUESTION",
+      "text": "Read the following passage and answer the question:",
+      "textContent": "(1) Fairies today are the stuff of children's stories, little magical people with wings, often shining with light. Typically pretty and female, like Tinkerbell in Peter Pan, they usually use their magic to do small things and are mostly friendly to humans.\n\n(2) We owe many of our modern ideas about fairies to Shakespeare and stories from the 18th and 19th centuries. Although we can see the origins of fairies as far back as the Ancient Greeks, we can see similar creatures in many cultures. The earliest fairy-like creatures can be found in the Greek idea that trees and rivers had spirits called dryads and nymphs. Some people think these creatures were originally the gods of earlier, pagan religions that worshipped nature. They were replaced by the Greek and Roman gods, and then later by the Christian God, and became smaller, less powerful figures as they lost importance.\n\n(3) Another explanation suggests the origin of fairies is a memory of real people, not spirits. So, for example, when tribes with metal weapons invaded land where people only used stone weapons, some of the people escaped and hid in forests and caves. Further support for this idea is that fairies were thought to be afraid of iron and could not touch it. Living outside of society, the hiding people probably stole food and attacked villages. This might explain why fairies were often described as playing tricks on humans. Hundreds of years ago, people actually believed that fairies stole new babies and replaced them with a 'changeling' – a fairy baby – or that they took new mothers and made them feed fairy babies with their milk.\n\n(4) While most people no longer believe in fairies, only a hundred years ago some people were very willing to think they might exist. In 1917, 16-year-old Elsie Wright took two photos of her cousin, nine-year-old Frances Griffiths, sitting with fairies. Some photography experts thought they were fake, while others weren't sure. But Arthur Conan Doyle, the writer of the Sherlock Holmes detective stories, believed they were real. He published the original pictures, and three more the girls took for him, in a magazine called The Strand, in 1920. The girls only admitted the photos were fake years later in 1983, created using pictures of dancers that Elsie copied from a book.\n\nWho believed the fairy photos were real?",
       "options": {
         "A": "Shakespeare",
         "B": "Arthur Conan Doyle",
@@ -792,8 +800,9 @@ export const questions = [
     {
       "id": 57,
       "category": "Ағылшын",
-      "type": "SINGLE_ANSWER_OPTIONS",
-      "text": "[Good language learner] What do good language learners do when they make mistakes?",
+      "type": "TEXT_QUESTION",
+      "text": "Read the following passage and answer the question:",
+      "textContent": "Many studies about language learning ask the question: What makes a good language learner? There are some things that good language learners do and some things they don't do. Here are some of the most useful suggestions from studies.\n\nDon't be afraid of making mistakes. People often get things wrong. Good language learners notice their mistakes and learn from them.\nDo group activities. People use language to communicate with other people. A good language learner always looks for opportunities to talk with other students.\nMake notes during every class. Notes help you to remember new language. Look at your notes when you do your homework.\nUse a dictionary. Good language learners often use dictionaries to check the meaning of words they don't know. They also make their own vocabulary lists.\nThink in the language you're learning outside the classroom. When you're shopping or walking down the street, remember useful words and phrases. Sometimes, when you're at home, say new words to practise your pronunciation.\nDo extra practice. Test and improve your language, reading and listening skills with self-study material. You can find a lot of this online.\nImagine yourself speaking in the language. Many good language learners can see and hear themselves speaking in the language. This helps their motivation.\nEnjoy the process. Good language learners have fun with the language. Watch a TV series or film, listen to songs, play video games or read a book. It's never too late to become a good language learner.\n\nWhat do good language learners do when they make mistakes?",
       "options": {
         "A": "They ignore them",
         "B": "They stop learning",
@@ -805,21 +814,23 @@ export const questions = [
     {
       "id": 58,
       "category": "Ағылшын",
-      "type": "SINGLE_ANSWER_OPTIONS",
-      "text": "[Good language learner] Why are group activities useful for learning a language?",
+      "type": "TEXT_QUESTION",
+      "text": "Read the following passage and answer the question:",
+      "textContent": "Many studies about language learning ask the question: What makes a good language learner? There are some things that good language learners do and some things they don't do. Here are some of the most useful suggestions from studies.\n\nDon't be afraid of making mistakes. People often get things wrong. Good language learners notice their mistakes and learn from them.\nDo group activities. People use language to communicate with other people. A good language learner always looks for opportunities to talk with other students.\nMake notes during every class. Notes help you to remember new language. Look at your notes when you do your homework.\nUse a dictionary. Good language learners often use dictionaries to check the meaning of words they don't know. They also make their own vocabulary lists.\nThink in the language you're learning outside the classroom. When you're shopping or walking down the street, remember useful words and phrases. Sometimes, when you're at home, say new words to practise your pronunciation.\nDo extra practice. Test and improve your language, reading and listening skills with self-study material. You can find a lot of this online.\nImagine yourself speaking in the language. Many good language learners can see and hear themselves speaking in the language. This helps their motivation.\nEnjoy the process. Good language learners have fun with the language. Watch a TV series or film, listen to songs, play video games or read a book. It's never too late to become a good language learner.\n\nWhy are group activities useful for learning a language?",
       "options": {
         "A": "Because you can speak to yourself",
         "B": "Because you can talk with others",
-        "C": "Because you don’t need a teacher",
-        "D": "Because it’s easy to sleep in class"
+        "C": "Because you don't need a teacher",
+        "D": "Because it's easy to sleep in class"
       },
       "correct_option": "B"
     },
     {
       "id": 59,
       "category": "Ағылшын",
-      "type": "SINGLE_ANSWER_OPTIONS",
-      "text": "[Good language learner] Why should you make notes in class?",
+      "type": "TEXT_QUESTION",
+      "text": "Read the following passage and answer the question:",
+      "textContent": "Many studies about language learning ask the question: What makes a good language learner? There are some things that good language learners do and some things they don't do. Here are some of the most useful suggestions from studies.\n\nDon't be afraid of making mistakes. People often get things wrong. Good language learners notice their mistakes and learn from them.\nDo group activities. People use language to communicate with other people. A good language learner always looks for opportunities to talk with other students.\nMake notes during every class. Notes help you to remember new language. Look at your notes when you do your homework.\nUse a dictionary. Good language learners often use dictionaries to check the meaning of words they don't know. They also make their own vocabulary lists.\nThink in the language you're learning outside the classroom. When you're shopping or walking down the street, remember useful words and phrases. Sometimes, when you're at home, say new words to practise your pronunciation.\nDo extra practice. Test and improve your language, reading and listening skills with self-study material. You can find a lot of this online.\nImagine yourself speaking in the language. Many good language learners can see and hear themselves speaking in the language. This helps their motivation.\nEnjoy the process. Good language learners have fun with the language. Watch a TV series or film, listen to songs, play video games or read a book. It's never too late to become a good language learner.\n\nWhy should you make notes in class?",
       "options": {
         "A": "To write a story",
         "B": "To help you remember new words",
@@ -831,8 +842,9 @@ export const questions = [
     {
       "id": 60,
       "category": "Ағылшын",
-      "type": "SINGLE_ANSWER_OPTIONS",
-      "text": "[Good language learner] How do good language learners use dictionaries?",
+      "type": "TEXT_QUESTION",
+      "text": "Read the following passage and answer the question:",
+      "textContent": "Many studies about language learning ask the question: What makes a good language learner? There are some things that good language learners do and some things they don't do. Here are some of the most useful suggestions from studies.\n\nDon't be afraid of making mistakes. People often get things wrong. Good language learners notice their mistakes and learn from them.\nDo group activities. People use language to communicate with other people. A good language learner always looks for opportunities to talk with other students.\nMake notes during every class. Notes help you to remember new language. Look at your notes when you do your homework.\nUse a dictionary. Good language learners often use dictionaries to check the meaning of words they don't know. They also make their own vocabulary lists.\nThink in the language you're learning outside the classroom. When you're shopping or walking down the street, remember useful words and phrases. Sometimes, when you're at home, say new words to practise your pronunciation.\nDo extra practice. Test and improve your language, reading and listening skills with self-study material. You can find a lot of this online.\nImagine yourself speaking in the language. Many good language learners can see and hear themselves speaking in the language. This helps their motivation.\nEnjoy the process. Good language learners have fun with the language. Watch a TV series or film, listen to songs, play video games or read a book. It's never too late to become a good language learner.\n\nHow do good language learners use dictionaries?",
       "options": {
         "A": "To find grammar rules",
         "B": "To play word games",
@@ -844,8 +856,9 @@ export const questions = [
     {
       "id": 61,
       "category": "Ағылшын",
-      "type": "SINGLE_ANSWER_OPTIONS",
-      "text": "[Good language learner] What should you do outside the classroom?",
+      "type": "TEXT_QUESTION",
+      "text": "Read the following passage and answer the question:",
+      "textContent": "Many studies about language learning ask the question: What makes a good language learner? There are some things that good language learners do and some things they don't do. Here are some of the most useful suggestions from studies.\n\nDon't be afraid of making mistakes. People often get things wrong. Good language learners notice their mistakes and learn from them.\nDo group activities. People use language to communicate with other people. A good language learner always looks for opportunities to talk with other students.\nMake notes during every class. Notes help you to remember new language. Look at your notes when you do your homework.\nUse a dictionary. Good language learners often use dictionaries to check the meaning of words they don't know. They also make their own vocabulary lists.\nThink in the language you're learning outside the classroom. When you're shopping or walking down the street, remember useful words and phrases. Sometimes, when you're at home, say new words to practise your pronunciation.\nDo extra practice. Test and improve your language, reading and listening skills with self-study material. You can find a lot of this online.\nImagine yourself speaking in the language. Many good language learners can see and hear themselves speaking in the language. This helps their motivation.\nEnjoy the process. Good language learners have fun with the language. Watch a TV series or film, listen to songs, play video games or read a book. It's never too late to become a good language learner.\n\nWhat should you do outside the classroom?",
       "options": {
         "A": "Think in your native language",
         "B": "Forget the language",
@@ -857,8 +870,9 @@ export const questions = [
     {
       "id": 62,
       "category": "Ағылшын",
-      "type": "SINGLE_ANSWER_OPTIONS",
-      "text": "[Good language learner] How do good language learners enjoy the process?",
+      "type": "TEXT_QUESTION",
+      "text": "Read the following passage and answer the question:",
+      "textContent": "Many studies about language learning ask the question: What makes a good language learner? There are some things that good language learners do and some things they don't do. Here are some of the most useful suggestions from studies.\n\nDon't be afraid of making mistakes. People often get things wrong. Good language learners notice their mistakes and learn from them.\nDo group activities. People use language to communicate with other people. A good language learner always looks for opportunities to talk with other students.\nMake notes during every class. Notes help you to remember new language. Look at your notes when you do your homework.\nUse a dictionary. Good language learners often use dictionaries to check the meaning of words they don't know. They also make their own vocabulary lists.\nThink in the language you're learning outside the classroom. When you're shopping or walking down the street, remember useful words and phrases. Sometimes, when you're at home, say new words to practise your pronunciation.\nDo extra practice. Test and improve your language, reading and listening skills with self-study material. You can find a lot of this online.\nImagine yourself speaking in the language. Many good language learners can see and hear themselves speaking in the language. This helps their motivation.\nEnjoy the process. Good language learners have fun with the language. Watch a TV series or film, listen to songs, play video games or read a book. It's never too late to become a good language learner.\n\nHow do good language learners enjoy the process?",
       "options": {
         "A": "By sleeping in class",
         "B": "By watching films and listening to songs",
@@ -870,8 +884,9 @@ export const questions = [
     {
       "id": 63,
       "category": "Ағылшын",
-      "type": "SINGLE_ANSWER_OPTIONS",
-      "text": "[Good language learner] What is one way to practise pronunciation at home?",
+      "type": "TEXT_QUESTION",
+      "text": "Read the following passage and answer the question:",
+      "textContent": "Many studies about language learning ask the question: What makes a good language learner? There are some things that good language learners do and some things they don't do. Here are some of the most useful suggestions from studies.\n\nDon't be afraid of making mistakes. People often get things wrong. Good language learners notice their mistakes and learn from them.\nDo group activities. People use language to communicate with other people. A good language learner always looks for opportunities to talk with other students.\nMake notes during every class. Notes help you to remember new language. Look at your notes when you do your homework.\nUse a dictionary. Good language learners often use dictionaries to check the meaning of words they don't know. They also make their own vocabulary lists.\nThink in the language you're learning outside the classroom. When you're shopping or walking down the street, remember useful words and phrases. Sometimes, when you're at home, say new words to practise your pronunciation.\nDo extra practice. Test and improve your language, reading and listening skills with self-study material. You can find a lot of this online.\nImagine yourself speaking in the language. Many good language learners can see and hear themselves speaking in the language. This helps their motivation.\nEnjoy the process. Good language learners have fun with the language. Watch a TV series or film, listen to songs, play video games or read a book. It's never too late to become a good language learner.\n\nWhat is one way to practise pronunciation at home?",
       "options": {
         "A": "Writing words only",
         "B": "Watching news in your language",
@@ -883,8 +898,9 @@ export const questions = [
     {
       "id": 64,
       "category": "Ағылшын",
-      "type": "SINGLE_ANSWER_OPTIONS",
-      "text": "[Good language learner] Where can you find self-study material?",
+      "type": "TEXT_QUESTION",
+      "text": "Read the following passage and answer the question:",
+      "textContent": "Many studies about language learning ask the question: What makes a good language learner? There are some things that good language learners do and some things they don't do. Here are some of the most useful suggestions from studies.\n\nDon't be afraid of making mistakes. People often get things wrong. Good language learners notice their mistakes and learn from them.\nDo group activities. People use language to communicate with other people. A good language learner always looks for opportunities to talk with other students.\nMake notes during every class. Notes help you to remember new language. Look at your notes when you do your homework.\nUse a dictionary. Good language learners often use dictionaries to check the meaning of words they don't know. They also make their own vocabulary lists.\nThink in the language you're learning outside the classroom. When you're shopping or walking down the street, remember useful words and phrases. Sometimes, when you're at home, say new words to practise your pronunciation.\nDo extra practice. Test and improve your language, reading and listening skills with self-study material. You can find a lot of this online.\nImagine yourself speaking in the language. Many good language learners can see and hear themselves speaking in the language. This helps their motivation.\nEnjoy the process. Good language learners have fun with the language. Watch a TV series or film, listen to songs, play video games or read a book. It's never too late to become a good language learner.\n\nWhere can you find self-study material?",
       "options": {
         "A": "In a supermarket",
         "B": "On the internet",

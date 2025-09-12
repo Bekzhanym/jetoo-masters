@@ -279,8 +279,8 @@
   }
   
   .play-pause-btn {
-    width: 45px;
-    height: 45px;
+    width: 60px;
+    height: 60px;
   }
   
   .time-display {
@@ -294,5 +294,10 @@
   
   .volume-slider {
     width: 60px;
+  }
+  
+  .play-pause-btn svg {
+    width: 60px;
+    height: 60px;
   }
 }
