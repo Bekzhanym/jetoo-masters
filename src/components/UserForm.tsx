@@ -279,8 +279,87 @@ const UserForm: React.FC<UserFormProps> = ({ onSubmit }) => {
     spec.code.toLowerCase().includes(specialtySearchTerm.toLowerCase())
   );
 
+  const formatPhoneNumber = (value: string): string => {
+    // Удаляем все нецифровые символы
+    let rawDigits = value.replace(/\D/g, '');
+    
+    // Обрабатываем префикс для Казахстана (+7)
+    // Если пользователь ввел 8, меняем на 7
+    if (rawDigits.startsWith('8')) {
+      rawDigits = '7' + rawDigits.substring(1);
+    }
+    // Если номер не начинается с 7, и есть цифры, добавляем 7
+    else if (!rawDigits.startsWith('7') && rawDigits.length > 0) {
+      rawDigits = '7' + rawDigits;
+    }
+    
+    // Ограничиваем до 11 цифр (7 + 10 цифр)
+    if (rawDigits.length > 11) {
+      rawDigits = rawDigits.substring(0, 11);
+    }
+    
+    // Если нет цифр, возвращаем пустую строку
+    if (rawDigits.length === 0) {
+      return '';
+    }
+    
+    let formatted = '+';
+    let i = 0;
+    
+    // Добавляем код страны (7)
+    if (rawDigits.length > i) {
+      formatted += rawDigits[i];
+      i++;
+    }
+    
+    // Применяем маску к оставшимся цифрам
+    // Первая группа из 3 цифр (например, 777)
+    if (rawDigits.length > i) {
+      formatted += ' (';
+      formatted += rawDigits.substring(i, Math.min(i + 3, rawDigits.length));
+      i += Math.min(3, rawDigits.length - i);
+    }
+    if (rawDigits.length >= 4) {
+      formatted += ')';
+    }
+    
+    // Вторая группа из 3 цифр (например, 123)
+    if (rawDigits.length > i) {
+      formatted += ' ';
+      formatted += rawDigits.substring(i, Math.min(i + 3, rawDigits.length));
+      i += Math.min(3, rawDigits.length - i);
+    }
+    
+    // Первая группа из 2 цифр (например, 45)
+    if (rawDigits.length > i) {
+      formatted += '-';
+      formatted += rawDigits.substring(i, Math.min(i + 2, rawDigits.length));
+      i += Math.min(2, rawDigits.length - i);
+    }
+    
+    // Вторая группа из 2 цифр (например, 67)
+    if (rawDigits.length > i) {
+      formatted += '-';
+      formatted += rawDigits.substring(i, Math.min(i + 2, rawDigits.length));
+      i += Math.min(2, rawDigits.length - i);
+    }
+    
+    return formatted;
+  };
+
   const handleInputChange = (field: keyof UserFormData, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    if (field === 'phoneNumber') {
+      // Если поле пустое, разрешаем полную очистку
+      if (value === '') {
+        setFormData(prev => ({ ...prev, [field]: '' }));
+      } else {
+        const formattedValue = formatPhoneNumber(value);
+        setFormData(prev => ({ ...prev, [field]: formattedValue }));
+      }
+    } else {
+      setFormData(prev => ({ ...prev, [field]: value }));
+    }
+    
     if (errors[field]) {
       setErrors(prev => ({ ...prev, [field]: undefined }));
     }
@@ -314,6 +393,26 @@ const UserForm: React.FC<UserFormProps> = ({ onSubmit }) => {
     }
   };
 
+  const handlePhoneKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    // Разрешаем цифры, +, Backspace, Delete, Tab, Enter, стрелки, Home, End
+    const allowedKeys = [
+      'Backspace', 'Delete', 'Tab', 'Enter', 
+      'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown',
+      'Home', 'End', 'Escape'
+    ];
+    const isNumber = e.key >= '0' && e.key <= '9';
+    const isPlus = e.key === '+';
+    
+    // Разрешаем удаление и навигацию
+    if (e.key === 'Backspace' || e.key === 'Delete') {
+      return; // Позволяем удаление
+    }
+    
+    if (!allowedKeys.includes(e.key) && !isNumber && !isPlus) {
+      e.preventDefault();
+    }
+  };
+
   const validateForm = (): boolean => {
     const newErrors: Partial<UserFormData> = {};
 
@@ -331,8 +430,14 @@ const UserForm: React.FC<UserFormProps> = ({ onSubmit }) => {
 
     if (!formData.phoneNumber.trim()) {
       newErrors.phoneNumber = 'Телефон номерін енгізіңіз';
-    } else if (!/^[+]?[0-9\s\-()]+$/.test(formData.phoneNumber)) {
-      newErrors.phoneNumber = 'Дұрыс телефон номерін енгізіңіз';
+    } else {
+      // Проверяем, что номер содержит достаточно цифр (минимум 11 цифр)
+      const phoneDigits = formData.phoneNumber.replace(/[^\d]/g, '');
+      if (phoneDigits.length < 11) {
+        newErrors.phoneNumber = 'Телефон номері толық емес';
+      } else if (phoneDigits.length > 12) {
+        newErrors.phoneNumber = 'Телефон номері тым ұзын';
+      }
     }
 
     setErrors(newErrors);
@@ -496,7 +601,9 @@ const UserForm: React.FC<UserFormProps> = ({ onSubmit }) => {
               className={`form-input ${errors.phoneNumber ? 'error' : ''}`}
               value={formData.phoneNumber}
               onChange={(e) => handleInputChange('phoneNumber', e.target.value)}
-              placeholder="+7 (XXX) XXX-XX-XX"
+              onKeyDown={handlePhoneKeyDown}
+              placeholder="+7 (777) 123-45-67"
+              maxLength={18}
             />
             {errors.phoneNumber && <span className="error-message">{errors.phoneNumber}</span>}
           </div>

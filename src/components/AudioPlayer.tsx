@@ -83,12 +83,12 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ audioUrl, title, duration }) 
           aria-label={isPlaying ? 'Pause' : 'Play'}
         >
           {isPlaying ? (
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="currentColor">
               <rect x="6" y="4" width="4" height="16"/>
               <rect x="14" y="4" width="4" height="16"/>
             </svg>
           ) : (
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="currentColor">
               <path d="M8 5v14l11-7z"/>
             </svg>
           )}
@@ -115,7 +115,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ audioUrl, title, duration }) 
             onClick={() => setShowVolumeControl(!showVolumeControl)}
             aria-label="Volume control"
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
               <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
             </svg>
           </button>
@@ -136,7 +136,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ audioUrl, title, duration }) 
         </div>
 
         <button className="more-btn" aria-label="More options">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
           </svg>
         </button>

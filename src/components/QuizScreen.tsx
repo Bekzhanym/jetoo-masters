@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { getFormattedQuestions } from '../data/questions';
 import type { UserInfo } from '../data/questions';
-import Logo from './Logo';
 import AudioPlayer from './AudioPlayer';
 import Timer from './Timer';
 import './QuizScreen.css';
@@ -22,6 +21,7 @@ const QuizScreen: React.FC<QuizScreenProps> = ({ onComplete }) => {
     setSelectedAnswer(answerIndex);
     setShowNextButton(true);
   };
+
 
 
   const handleTimeUp = () => {
@@ -141,7 +141,6 @@ const QuizScreen: React.FC<QuizScreenProps> = ({ onComplete }) => {
   return (
     <div className="quiz-screen">
       <Timer duration={110} onTimeUp={handleTimeUp} />
-      <Logo size="large" />
       <div className="quiz-container">
         <div className="quiz-header">
           <div className="progress-section">

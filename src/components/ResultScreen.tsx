@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './ResultScreen.css';
+import { sendTestResultToGoogleSheets } from '../utils/sheetsApi';
 
 interface UserFormData {
   fullName: string;
@@ -28,6 +29,43 @@ const ResultScreen: React.FC<ResultScreenProps> = ({
   sectionScores
 }) => {
   const percentage = Math.round((correctAnswers / totalQuestions) * 100);
+  const [isSendingResults, setIsSendingResults] = useState(false);
+  const [resultsSent, setResultsSent] = useState(false);
+
+  // Отправка результатов в Google Sheets при загрузке компонента
+  useEffect(() => {
+    const sendResults = async () => {
+      if (userData && sectionScores && !resultsSent) {
+        setIsSendingResults(true);
+        
+        try {
+          const testResultData = {
+            name: userData.fullName,
+            university: userData.university,
+            specialty: userData.specialty,
+            phone: userData.phoneNumber,
+            score: score,
+            correctAnswers: correctAnswers,
+            criticalScore: sectionScores.critical,
+            analyticalScore: sectionScores.analytical,
+            englishScore: sectionScores.english
+          };
+          
+          const success = await sendTestResultToGoogleSheets(testResultData);
+          
+          if (success) {
+            setResultsSent(true);
+          }
+        } catch (error) {
+          console.error('Ошибка при отправке результатов теста:', error);
+        } finally {
+          setIsSendingResults(false);
+        }
+      }
+    };
+
+    sendResults();
+  }, [userData, sectionScores, score, correctAnswers, totalQuestions, percentage, resultsSent]);
 
   // Функция для получения уровня по секциям
   const getSectionLevel = (sectionScore: number, totalQuestions: number): string => {
@@ -52,6 +90,16 @@ const ResultScreen: React.FC<ResultScreenProps> = ({
       <div className="result-container">
         <div className="result-header">
           <h1 className="result-title">Нәтижеңіз</h1>
+          {isSendingResults && (
+            <div className="sending-indicator">
+              <span>Нәтижелер жіберілуде...</span>
+            </div>
+          )}
+          {resultsSent && !isSendingResults && (
+            <div className="sent-indicator">
+              <span>✅ Нәтижелер сәтті жіберілді</span>
+            </div>
+          )}
           {userData && (
             <div className="user-info">
               <div className="user-info-item">
@@ -84,11 +132,7 @@ const ResultScreen: React.FC<ResultScreenProps> = ({
           <div className="stats-section">
             <div className="stat-item">
               <div className="stat-label">Дұрыс жауаптар</div>
-              <div className="stat-value">{correctAnswers}/{totalQuestions}</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-label">Пайыз</div>
-              <div className="stat-value">{percentage}%</div>
+              <div className="stat-value">{correctAnswers}</div>
             </div>
           </div>
 
