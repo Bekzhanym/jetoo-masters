@@ -134,16 +134,24 @@
   .timer-container {
     top: 8px;
     right: 15px;
-    padding: 12px 16px;
-    min-width: 160px;
+    padding: 8px 12px;
+    min-width: 130px;
   }
   
   .timer-time {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
   
   .timer-label {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+  }
+  
+  .timer-icon {
+    font-size: 1rem;
+  }
+  
+  .timer-progress {
+    height: 4px;
   }
 }
 
@@ -151,15 +159,23 @@
   .timer-container {
     top: 5px;
     right: 10px;
-    padding: 10px 14px;
-    min-width: 140px;
+    padding: 6px 10px;
+    min-width: 110px;
   }
   
   .timer-time {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
   
   .timer-label {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
+  }
+  
+  .timer-icon {
+    font-size: 0.9rem;
+  }
+  
+  .timer-progress {
+    height: 3px;
   }
 }
