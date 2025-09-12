@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './UserForm.css';
+import { sendFormToGoogleSheets } from '../utils/sheetsApi';
 
 interface UserFormData {
   fullName: string;
@@ -255,6 +256,7 @@ const UserForm: React.FC<UserFormProps> = ({ onSubmit }) => {
   const [specialtySearchTerm, setSpecialtySearchTerm] = useState('');
   const [showSpecialtyDropdown, setShowSpecialtyDropdown] = useState(false);
   const [errors, setErrors] = useState<Partial<UserFormData>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const filteredUniversities = universities.filter(uni => {
     if (searchTerm === '') return true;
@@ -337,10 +339,37 @@ const UserForm: React.FC<UserFormProps> = ({ onSubmit }) => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (validateForm()) {
-      onSubmit(formData);
+      setIsSubmitting(true);
+      
+      try {
+        // Отправляем данные в Google Sheets
+        const formDataForSheets = {
+          name: formData.fullName,
+          university: formData.university,
+          specialty: formData.specialty,
+          phone: formData.phoneNumber
+        };
+        
+        const success = await sendFormToGoogleSheets(formDataForSheets);
+        
+        if (success) {
+          console.log('✅ Данные формы успешно отправлены в Google Sheets');
+        } else {
+          console.warn('⚠️ Не удалось отправить данные в Google Sheets, но продолжаем с тестом');
+        }
+        
+        // Продолжаем с тестом независимо от результата отправки
+        onSubmit(formData);
+      } catch (error) {
+        console.error('❌ Ошибка при отправке данных формы:', error);
+        // Продолжаем с тестом даже при ошибке
+        onSubmit(formData);
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -472,8 +501,8 @@ const UserForm: React.FC<UserFormProps> = ({ onSubmit }) => {
             {errors.phoneNumber && <span className="error-message">{errors.phoneNumber}</span>}
           </div>
 
-          <button type="submit" className="submit-button">
-            Тестті бастау
+          <button type="submit" className="submit-button" disabled={isSubmitting}>
+            {isSubmitting ? 'Жіберілуде...' : 'Тестті бастау'}
           </button>
         </form>
       </div>
